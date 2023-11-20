@@ -23,6 +23,29 @@
 		background-color: gray;
 		}
 	</style>
+	<script>
+	function f(){
+	s=''
+	for(i=0;i<x.length;i++){
+	s+=	`
+		<div class="col s12 m6 l3" >
+			<div class="card">
+			<div class="card-image">
+				<img src= ${x[i]}>
+				<span class="card-title">${y[i]}</span>
+			</div>
+			<div class="card-content">
+				<p>I am a very simple card. I am good at containing small bits of information.</p>
+			</div>
+			<div class="card-action">
+				<a href="${z[i]}">Link</a>
+			</div>
+			</div>
+		</div>`;
+		}
+		document.getElementById("demo").innerHTML=s
+		}
+	</script>
 </head>
 <body>
 <nav>
@@ -44,7 +67,7 @@
           <span class="card-title">Aeroad CFR</span>
         </div>
         <div class="card-content">
-          <p>頂級碳纖維車架，流線造型除了在高速行進時降低空氣阻力，靜止時也有帥氣的外型，剛性十足同時重量並不多出太多，儼然是單車界超跑，處處散發著王者般的霸氣，也是作者心目中的夢幻車款。.</p>
+          <p>頂級碳纖維車架，剛性十足同時重量不多出太多，儼然是單車界超跑，處處散發著王者般的霸氣，作者心目中的夢幻車款。.</p>
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
