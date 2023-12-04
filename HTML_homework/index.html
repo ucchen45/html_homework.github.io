@@ -42,18 +42,20 @@
 	s=''
 	for(i=0;i<x.length;i++){
 	s+=	`
-		<div class="card">
-		<div class="card-image">
-  			<img src= ${title_photo[i]}>
-			<span class="card-title">${title[i]}</span>
+		<div class="col s12 m12 l4"><h4>旗艦</h4>
+  		<div class="card">
+			<div class="card-image">
+  				<img src= ${title_photo[i]}>
+				<span class="card-title">${title[i]}</span>
+			</div>
+			<div class="card-content">
+  				<p>${card_text[i]}</p>
+			</div>
+			<div class="card-action">
+				<a href="${more_info[i]}">更多資訊</a>
+   			</div>
 		</div>
-		<div class="card-content">
-  			<p>${card_text[i]}</p>
-		</div>
-		<div class="card-action">
-			<a href="${more_info[i]}">更多資訊</a>
-   		</div>
-		</div>
+  		</div>
 		`;
 		}
 		document.getElementById("top").innerHTML=s
@@ -73,7 +75,7 @@
 </nav>
   
 <div class="row" id="top">
-    <div class="col s12 m12 l4"><h4>旗艦</h4>
+    
       <button onclick="javascript:f();">展開</button>
     </div>
 </div>
