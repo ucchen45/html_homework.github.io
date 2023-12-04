@@ -42,20 +42,19 @@
 	s=''
 	for(i=0;i<x.length;i++){
 	s+=	`
-		<div class="col s12 m12 l4" >
-			<div class="card">
-			<div class="card-image">
-				<img src= ${title_photo[i]}>
-				<span class="card-title">${title[i]}</span>
-			</div>
-			<div class="card-content">
-				<p>${card_text[i]}</p>
-			</div>
-			<div class="card-action">
-				<a href="${more_info[i]}">更多資訊</a>
-			</div>
-			</div>
-		</div>`;
+		<div class="card">
+		<div class="card-image">
+  			<img src= ${title_photo[i]}>
+			<span class="card-title">${title[i]}</span>
+		</div>
+		<div class="card-content">
+  			<p>${card_text[i]}</p>
+		</div>
+		<div class="card-action">
+			<a href="${more_info[i]}">更多資訊</a>
+   		</div>
+		</div>
+		`;
 		}
 		document.getElementById("top").innerHTML=s
 		}
