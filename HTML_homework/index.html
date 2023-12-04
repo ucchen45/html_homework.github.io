@@ -34,6 +34,11 @@
 		}
 	</style>
 	<script>
+	title_photo=["https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dwed632419/images/plp/Road/Aeroad/Platform-Canyon-Aeroad-cfr-my22-11.jpg?sw=848&sh=477&sm=cut",
+		    ]
+	title=["Aeroad"]
+	card_text=["帥氣流線外型、踩踏剛性十足同時重量不多出太多，儼然單車界超跑，處處散發著王者霸氣，作者心目中的夢幻車款。"]
+	more_info=["#"]
 	function f(){
 	s=''
 	for(i=0;i<x.length;i++){
@@ -41,19 +46,19 @@
 		<div class="col s12 m12 l4" >
 			<div class="card">
 			<div class="card-image">
-				<img src= ${x[i]}>
-				<span class="card-title">${y[i]}</span>
+				<img src= ${title_photo[i]}>
+				<span class="card-title">${title[i]}</span>
 			</div>
 			<div class="card-content">
-				<p>I am a very simple card. I am good at containing small bits of information.</p>
+				<p>${card_text[i]}</p>
 			</div>
 			<div class="card-action">
-				<a href="${z[i]}">Link</a>
+				<a href="${more_info[i]}">更多資訊</a>
 			</div>
 			</div>
 		</div>`;
 		}
-		document.getElementById("demo").innerHTML=s
+		document.getElementById("top").innerHTML=s
 		}
 	</script>
 </head>
@@ -69,22 +74,11 @@
     </div>
 </nav>
   
-<div class="row">
+<div class="row",id="top">
     <div class="col s12 m12 l4"><h4>旗艦</h4>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dwed632419/images/plp/Road/Aeroad/Platform-Canyon-Aeroad-cfr-my22-11.jpg?sw=848&sh=477&sm=cut">
-          <span class="card-title">Aeroad CFR</span>
-        </div>
-        <div class="card-content">
-          <p>帥氣流線外型、踩踏剛性十足同時重量不多出太多，儼然單車界超跑，處處散發著王者霸氣，作者心目中的夢幻車款。</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
-      </div>
+      javascript:f();
     </div>
-  </div>
+</div>
   
 <footer class="page-footer">
           <div class="container">
