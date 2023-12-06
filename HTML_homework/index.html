@@ -25,24 +25,22 @@
 	</style>
 </head>
 <body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	
 	<!--頂部區塊-->
-		<nav>
-    		<div class="nav-wrapper">
+	<nav>
+    	<div class="nav-wrapper">
       		<a href="https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html" class="brand-logo"><i class="material-icons" style="font-size: 40px;">directions_bike</i><p>Canyon公路車中文資訊整理論壇</p></a>
       		<ul id="nav-mobile" class="right hide-on-med-and-down">
         		<li><a href="sass.html">Canyon公路車</a></li>
         		<li><a href="badges.html">中部公路車地圖</a></li>
         		<li><a href="collapsible.html">留言板</a></li>
 		</ul>
-    		</div>
+	</div>
 	</nav>
 
 	<!--前言-->
 	<div class="row">
-	<div class="col l2 m1 s1"></div>
-	<h4>前言</h4>
+		<div class="col l2 m1 s1"></div>
+		<h4>前言</h4>
 	</div>
 	<div class="container">
 	<p>Canyon，一個於三大環賽擁有許多亮眼表現的德國品牌。許多車友因為高昂運費以及英文網站而對Canyon敬而遠之，但其實在眾多一級車之中，即使加上運費，Canyon仍是較為平易近人的選擇(興許與Canyon網路直銷模式有關)。且與許多廠牌為換取重量，犧牲部分空氣力學效果的做法(即所謂全能車)不同，Canyon空力車血統純正，有堅持，有個性。能用更划算的價格買到同樣，甚至可說更優秀的車款，是作者所以推崇。</p>
@@ -51,48 +49,47 @@
 
 	<!--車款資訊-->
 	<div class="row">
-	<div class="col l2 m1 s1"></div>
-	<h4>Canyon公路車</h4>
+		<div class="col l2 m1 s1"></div>
+		<h4>Canyon公路車</h4>
 	</div>
 	<div class="container">
 	<h5>旗艦 CFR</h5>
-	<div class="row" id="top">
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
-	<script>
-	google.charts.load('current', {'packages':['corechart']});
-	google.charts.setOnLoadCallback(init);
-	function init() {
-	  	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-	  	var query = new google.visualization.Query(url);
-	  	query.setQuery('select *');
-	  	query.send(processSheetsData);
-	}
+		<div class="row" id="top">
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(init);
+		function init() {
+	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+	  		var query = new google.visualization.Query(url);
+	  		query.setQuery('select *');
+	  		query.send(processSheetsData);
+		}
 	
-	function processSheetsData(response) {
-		var data = response.getDataTable();
-	  	var columns = data.getNumberOfColumns();
-	  	var rows = data.getNumberOfRows();
-	  	var s = "";
-	  	for (var r=0 ; r<rows ; r++) {
-		s+=	`
-			<div class="col s12 m12 l4">
-  			<div class="card">
-				<div class="card-image">
-  					<img src= ${data.getFormattedValue(r,3)}>
-					<span class="card-title">${data.getFormattedValue(r,1)}</span>
+		function processSheetsData(response) {
+			var data = response.getDataTable();
+	  		var columns = data.getNumberOfColumns();
+	  		var rows = data.getNumberOfRows();
+	  		var s = "";
+	  		for (var r=0 ; r<rows ; r++) {
+				s+=	`
+				<div class="col s12 m12 l4">
+  				<div class="card">
+					<div class="card-image">
+  						<img src= ${data.getFormattedValue(r,3)}>
+						<span class="card-title">${data.getFormattedValue(r,1)}</span>
+					</div>
+					<div class="card-content">
+  						<p>${data.getFormattedValue(r,2}</p>
+					</div>
+					<div class="card-action">
+						<a href="${data.getFormattedValue(r,4)}">更多資訊</a>
+   					</div>
 				</div>
-				<div class="card-content">
-  					<p>${data.getFormattedValue(r,2}</p>
-				</div>
-				<div class="card-action">
-					<a href="${data.getFormattedValue(r,4)}">更多資訊</a>
-   				</div>
-			</div>
-  			</div>
-			`;}
-		document.getElementById("top").innerHTML=s;
-	}
-	</script>
+  				</div>`;}
+			document.getElementById("top").innerHTML=s;
+			}
+		</script>
 		<a href="javascript:processSheetsData();"><i class="material-icons" style="font-size: 15px;">keyboard_arrow_right</i>展開</a>
 	</div>
 	</div>
@@ -128,4 +125,5 @@
         </div>
 	</div>
 	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
