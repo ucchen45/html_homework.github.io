@@ -54,7 +54,7 @@
 	</div>
 	<div class="container">
 	<h5>旗艦-CFR</h5>
-		<div class="row" id="CFR">
+		<div class="row" id="card">
 		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
 		google.charts.load('current', {'packages':['corechart']});
@@ -87,11 +87,52 @@
    					</div>
 				</div>
   				</div>`;}
-			document.getElementById("CFR").innerHTML=s;
+			document.getElementById("card").innerHTML=s;
 			}
 		</script>
 		<a href="javascript:processSheetsData();"></a>
-	</div>
+		</div>
+		
+		<div class="container">
+	<h5>高階-CF SLX</h5>
+		<div class="row" id="card">
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(init);
+		function init() {
+	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+	  		var query = new google.visualization.Query(url);
+	  		query.setQuery('select *');
+	  		query.send(processSheetsData);
+		}
+	
+		function processSheetsData(response) {
+			var data = response.getDataTable();
+	  		var columns = data.getNumberOfColumns();
+	  		var rows = data.getNumberOfRows();
+	  		var s = "";
+	  		for (var r=1 ; r<rows ; r++) {
+				s+=	`
+				<div class="col s12 m12 l4">
+  				<div class="card">
+					<div class="card-image">
+  						<img src= ${data.getFormattedValue(r,3)}>
+						<span class="card-title">${data.getFormattedValue(r,1)}</span>
+					</div>
+					<div class="card-content">
+  						<p>${data.getFormattedValue(r,2)}</p>
+					</div>
+					<div class="card-action">
+						<a href="${data.getFormattedValue(r,4)}">詳細資訊</a>
+   					</div>
+				</div>
+  				</div>`;}
+			document.getElementById("card").innerHTML=s;
+			}
+		</script>
+		<a href="javascript:processSheetsData();"></a>
+		</div>
 	</div>
 
 	<!--中部公路車地圖-->
