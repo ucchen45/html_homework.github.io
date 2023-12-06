@@ -34,34 +34,43 @@
 		margin-right: 10px;
 		}
 	</style>
-	
+
 	<script>
-	function card(){
-	title_photo=["https://www.canyon.com/dw/image/v2/BCML_PRD/on/demandware.static/-/Library-Sites-canyon-shared/default/dwed632419/images/plp/Road/Aeroad/Platform-Canyon-Aeroad-cfr-my22-11.jpg?sw=848&sh=477&sm=cut"]
-	title=["Aeroad CFR"]
-	card_text=["流線外型、踩踏剛性高，儼然單車界超跑，處處散發著王者霸氣，作者心目中的夢幻車款。"]
-	more_info=["#"]
-	s=''
-	for(i=0;i<title.length;i++){
-	s+=	`
-		<div class="col s12 m12 l4">
-  		<div class="card">
-			<div class="card-image">
-  				<img src= ${title_photo[i]}>
-				<span class="card-title">${title[i]}</span>
+	
+	google.charts.load('current', {'packages':['corechart']});
+
+	function init() {
+	  	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+	  	var query = new google.visualization.Query(url);
+	  	query.setQuery('select *');
+	  	query.send(processSheetsData);
+	}	
+	
+	google.charts.setOnLoadCallback(init);
+	
+	function processSheetsData(response) {
+		var data = response.getDataTable();
+	  	var columns = data.getNumberOfColumns();
+	  	var rows = data.getNumberOfRows();
+	  	var s = "";
+	  	for (var r=0 ; r<rows ; r++) {
+		s+=	`
+			<div class="col s12 m12 l4">
+  			<div class="card">
+				<div class="card-image">
+  					<img src= ${title_photo[r]}>
+					<span class="card-title">${title[r]}</span>
+				</div>
+				<div class="card-content">
+  					<p>${card_text[r]}</p>
+				</div>
+				<div class="card-action">
+					<a href="${more_info[r]}">更多資訊</a>
+   				</div>
 			</div>
-			<div class="card-content">
-  				<p>${card_text[i]}</p>
-			</div>
-			<div class="card-action">
-				<a href="${more_info[i]}">更多資訊</a>
-   			</div>
-		</div>
-  		</div>
-		`;
-		}
-		document.getElementById("top").innerHTML=s
-		}
+  			</div>
+			`;}document.getElementById("top").innerHTML=s
+	}
 	</script>
 </head>
 <body>
@@ -95,8 +104,6 @@
 	<div class="container">
 	<h5>旗艦 CFR</h5>
 	<div class="row" id="top">
-      	<a href="javascript:card();"><i class="material-icons" style="font-size: 15px;">keyboard_arrow_right</i>展開</a>
-	</div>
 	</div>
 
 	<!--中部公路車地圖-->
@@ -124,7 +131,7 @@
                 <h5 class="white-text">連結</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="https://www.canyon.com/en-tw/">Canyon官方網站</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">單車資訊表格</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing">單車資訊表格</a></li>
                   <li><a class="grey-text text-lighten-3" href="https://github.com/ucchen45/html_homework.github.io">Github</a></li>
                 </ul>
         </div>
