@@ -22,15 +22,15 @@
 		margin-left: 10px;
 		margin-right: 10px;
 		}
-		
-		<script src="https://www.gstatic.com/charts/loader.js"></script>
-		<script>
+	</style>
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(init);
 		function init(tag) {
 	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
 	  		var query = new google.visualization.Query(url);
-	  		query.setQuery('select where A contains* \"+tag+\" ');
+	  		query.setQuery('select where A contains* +tag+ ');
 	  		query.send(processSheetsData);
 		}
 	
@@ -55,10 +55,10 @@
    					</div>
 				</div>
   				</div>`;}
-			document.getElementById("card").innerHTML=s;
+			document.getElementById(tag).innerHTML=s;
 			}
-		</script>
-	</style>
+	</script>
+	
 </head>
 <body>
 	
@@ -93,13 +93,13 @@
 	
 	<div class="container">
 	<h5>旗艦-CFR</h5>
-		<div class="row" id="card">
-		<a href="javascript:processSheetsData(init(CFR));">展開</a>
+		<div class="row" id="CFR">
+		<a href="javascript:init(CFR);">展開</a>
 		</div>
 		
 	<h5>高階-CF SLX</h5>
-		<div class="row" id="card">
-		<a href="javascript:processSheetsData(init(CFR));">展開</a>
+		<div class="row" id="CF SLX">
+		<a href="javascript:init(CF SLX);">展開</a>
 		</div>
 	</div>
 	
