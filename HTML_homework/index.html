@@ -62,10 +62,10 @@
 	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
 	  		var query = new google.visualization.Query(url);
 	  		query.setQuery('select *');
-	  		query.send(processSheetsData);
+	  		query.send(CFRData);
 		}
 	
-		function processSheetsData(response){
+		function CFRData(response){
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
 	  		var rows = data.getNumberOfRows();
@@ -91,7 +91,7 @@
 			document.getElementById("cardR").innerHTML=sR;
 			}
 		</script>
-		<a href="javascript:processSheetsData();"></a>
+		<a href="javascript:CFRData();"></a>
 		</div>
 	
 	<h5>高階-CF SLX</h5>
@@ -104,10 +104,10 @@
 	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
 	  		var query = new google.visualization.Query(url);
 	  		query.setQuery('select *');
-	  		query.send(processSheetsData);
+	  		query.send(SLXData);
 		}
 	
-		function processSheetsData(response){
+		function SLXData(response){
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
 	  		var rows = data.getNumberOfRows();
@@ -133,7 +133,7 @@
 			document.getElementById("SLX").innerHTML=sSLX;
 			}
 		</script>
-		<a href="javascript:processSheetsData();"></a>
+		<a href="javascript:SLXData();"></a>
 		</div>
 	</div>
 	
