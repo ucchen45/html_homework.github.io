@@ -62,7 +62,7 @@
 	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
 	  		var query = new google.visualization.Query(url);
 	  		query.setQuery('select *');
-	  		query.send(CFRData);
+	  		query.send(CFRData,SLXData);
 		}
 	
 		function CFRData(response){
