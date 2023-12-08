@@ -30,7 +30,7 @@
 		function init(tag) {
 	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
 	  		var query = new google.visualization.Query(url);
-	  		query.setQuery("select where A contains '" + tag + "'");
+	  		query.setQuery("select * where A contains '" + tag + "'");
 	  		query.send(processSheetsData);
 		}
 	
@@ -55,7 +55,8 @@
    					</div>
 				</div>
   				</div>`;}
-			document.getElementById(tag).innerHTML=s;
+			document.getElementById("CFR").innerHTML=s;
+			document.getElementById("CF SLX").innerHTML=s;
 			}
 	</script>
 	
