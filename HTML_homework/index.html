@@ -53,7 +53,7 @@
 	</div>
 	<div class="container">
 	<h5>旗艦-CFR</h5>
-		<div class="row" id="card">
+		<div class="row" id="sR">
 		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
 		google.charts.load('current', {'packages':['corechart']});
@@ -69,10 +69,10 @@
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
 	  		var rows = data.getNumberOfRows();
-	  		var s = "";
+	  		var sR = "";
 	  		for (var r=1 ; r<rows ; r++) {
 			if (data.getFormattedValue(r,0) === "CFR"){
-				s+=	`
+				sR+=	`
 				<div class="col s12 m12 l4">
   				<div class="card">
 					<div class="card-image">
@@ -88,14 +88,14 @@
 				</div>
   				</div>`;}
 			}
-			document.getElementById("card").innerHTML=s;
+			document.getElementById("cardR").innerHTML=sR;
 			}
 		</script>
 		<a href="javascript:processSheetsData();"></a>
 		</div>
 	
 	<h5>高階-CF SLX</h5>
-	<div class="row" id="card">
+	<div class="row" id="SLX">
 		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
 		google.charts.load('current', {'packages':['corechart']});
@@ -111,10 +111,10 @@
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
 	  		var rows = data.getNumberOfRows();
-	  		var s = "";
+	  		var sSLX = "";
 	  		for (var r=1 ; r<rows ; r++) {
 			if (data.getFormattedValue(r,0) === "CF SLX"){
-				s+=	`
+				sSLX+=	`
 				<div class="col s12 m12 l4">
   				<div class="card">
 					<div class="card-image">
@@ -130,7 +130,7 @@
 				</div>
   				</div>`;}
 			}
-			document.getElementById("card").innerHTML=s;
+			document.getElementById("SLX").innerHTML=sSLX;
 			}
 		</script>
 		<a href="javascript:processSheetsData();"></a>
