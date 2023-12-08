@@ -98,15 +98,6 @@
 	<div class="row" id="SLX">
 		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
-		google.charts.load('current', {'packages':['corechart']});
-		google.charts.setOnLoadCallback(init);
-		function init() {
-	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-	  		var query = new google.visualization.Query(url);
-	  		query.setQuery('select *');
-	  		query.send(SLXData);
-		}
-	
 		function SLXData(response){
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
