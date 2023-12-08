@@ -23,49 +23,6 @@
 		margin-right: 10px;
 		}
 	</style>
-	
-	<script src="https://www.gstatic.com/charts/loader.js"></script>
-	<script>
-		google.charts.load('current', {'packages':['corechart']});
-		google.charts.setOnLoadCallback(init);
-		function init() {
-	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-	  		var query = new google.visualization.Query(url);
-	  		query.setQuery('select *');
-	  		query.send(processData);
-		}
-		
-		function processData(response) {
-    			var data = response.getDataTable();
-    			var columns = data.getNumberOfColumns();
-    			var rows = data.getNumberOfRows();
-
-    			var CFRData = [];
-    			var SLXData = [];
-
-    			for (var r = 1; r < rows; r++) {
-        			if (data.getFormattedValue(r, 0) === 'CFR') {
-            			CFRData.push([
-                			data.getFormattedValue(r, 1),
-                			data.getFormattedValue(r, 2),
-                			data.getFormattedValue(r, 3),
-                			data.getFormattedValue(r, 4)
-            			]);
-        			}
-				else if (data.getFormattedValue(r, 0) === 'CF SLX') {
-            				SLXData.push([
-                			data.getFormattedValue(r, 1),
-                			data.getFormattedValue(r, 2),
-                			data.getFormattedValue(r, 3),
-                			data.getFormattedValue(r, 4)
-            			]);
-        			}
-    			}
-
-    			processCFRData(CFRData);
-    			processSLXData(SLXData);
-			}
-	</script>
 </head>
 <body>
 	<!--頂部區塊-->
@@ -97,8 +54,17 @@
 	<div class="container">
 	<h5>旗艦-CFR</h5>
 		<div class="row" id="cardR">
-		
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(init);
+		function init() {
+	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+	  		var query = new google.visualization.Query(url);
+	  		query.setQuery('select *');
+	  		query.send(CFRData);
+		}
+	
 		function CFRData(response){
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
@@ -130,7 +96,17 @@
 	
 	<h5>高階-CF SLX</h5>
 	<div class="row" id="SLX">
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(init);
+		function init() {
+	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+	  		var query = new google.visualization.Query(url);
+	  		query.setQuery('select *');
+	  		query.send(SLXData);
+		}
+
 		function SLXData(response){
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
@@ -171,7 +147,6 @@
 	<div class="col l2 m1 s1"></div>
 	<h4>留言板</h4>
 	</div>
-
 	<!--底部-->
 	<footer class="page-footer">          
     	<div class="row">
