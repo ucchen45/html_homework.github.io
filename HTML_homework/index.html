@@ -23,40 +23,8 @@
 		margin-right: 10px;
 		}
 	</style>
-</head>
-<body>
-	<!--頂部區塊-->
-	<nav>
-    	<div class="nav-wrapper">
-      		<a href="https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html" class="brand-logo"><i class="material-icons" style="font-size: 40px;">directions_bike</i><p>Canyon中文資訊整理論壇</p></a>
-      		<ul id="nav-mobile" class="right hide-on-med-and-down">
-        		<li><a href="sass.html">Canyon公路車</a></li>
-        		<li><a href="badges.html">中部公路車地圖</a></li>
-        		<li><a href="collapsible.html">留言板</a></li>
-		</ul>
-	</div>
-	</nav>
-
-	<!--前言-->
-	<div class="row">
-		<div class="col l2 m1 s1"></div>
-		<h4>前言</h4>
-	</div>
-	<div class="container">
-	<p>Canyon，一個於三大環賽擁有許多亮眼表現的德國品牌。許多車友因為高昂運費以及英文網站而對Canyon敬而遠之，但其實在眾多一級車之中，即使加上運費，Canyon仍是較為平易近人的選擇(興許與Canyon網路直銷模式有關)。且與許多廠牌為換取重量，犧牲部分空氣力學效果的做法(即所謂全能車)不同，Canyon空力車血統純正，有堅持，有個性。能用更划算的價格買到同樣，甚至可說更優秀的車款，是作者所以推崇。</p>
-	<p>新臺幣十萬元以內(或說CF SL以下的車款)由於運費比例高，並不推薦，在此便不整理，有其他許多國產車的好選擇。</p>
-	<p>出於作者時間有限與個人喜好，本站目前暫且僅止於Shimano系統之公路車相關資訊，還請見諒。</p>
-	</div>
-
-	<!--車款資訊-->
-	<div class="row">
-		<div class="col l2 m1 s1"></div>
-		<h4>Canyon公路車</h4>
-	</div>
-	<div class="container">
-		<h5>旗艦-CFR</h5>
-		<div class="row" id="card">
-		<script src="https://www.gstatic.com/charts/loader.js"></script>
+	
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
 		google.charts.load('current', {'packages':['corechart']});
 		google.charts.setOnLoadCallback(init);
@@ -91,7 +59,40 @@
 			document.getElementById("card").innerHTML=s;
 			}
 		</script>
-		<a href="javascript:cardData();"></a>
+</head>
+<body>
+	<!--頂部區塊-->
+	<nav>
+    	<div class="nav-wrapper">
+      		<a href="https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html" class="brand-logo"><i class="material-icons" style="font-size: 40px;">directions_bike</i><p>Canyon中文資訊整理論壇</p></a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+        		<li><a href="sass.html">Canyon公路車</a></li>
+        		<li><a href="badges.html">中部公路車地圖</a></li>
+        		<li><a href="collapsible.html">留言板</a></li>
+		</ul>
+	</div>
+	</nav>
+
+	<!--前言-->
+	<div class="row">
+		<div class="col l2 m1 s1"></div>
+		<h4>前言</h4>
+	</div>
+	<div class="container">
+	<p>Canyon，一個於三大環賽擁有許多亮眼表現的德國品牌。許多車友因為高昂運費以及英文網站而對Canyon敬而遠之，但其實在眾多一級車之中，即使加上運費，Canyon仍是較為平易近人的選擇(興許與Canyon網路直銷模式有關)。且與許多廠牌為換取重量，犧牲部分空氣力學效果的做法(即所謂全能車)不同，Canyon空力車血統純正，有堅持，有個性。能用更划算的價格買到同樣，甚至可說更優秀的車款，是作者所以推崇。</p>
+	<p>新臺幣十萬元以內(或說CF SL以下的車款)由於運費比例高，並不推薦，在此便不整理，有其他許多國產車的好選擇。</p>
+	<p>出於作者時間有限與個人喜好，本站目前暫且僅止於Shimano系統之公路車相關資訊，還請見諒。</p>
+	</div>
+
+	<!--車款資訊-->
+	<div class="row">
+		<div class="col l2 m1 s1"></div>
+		<h4>Canyon公路車</h4>
+	</div>
+	<div class="container">
+		<h5>旗艦-CFR</h5>
+		<div class="row" id="card">
+		<a href="javascript:cardData();">展開</a>
 		</div>
 		
 		<h5>高階-CF SLX</h5>
