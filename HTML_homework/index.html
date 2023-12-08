@@ -32,8 +32,37 @@
 	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
 	  		var query = new google.visualization.Query(url);
 	  		query.setQuery('select *');
-	  		query.send(CFRData);
-			query.send(SLXData);
+	  		query.send(processData);
+		}
+		
+		function processData(Data){
+			var data = response.getDataTable();
+    			var columns = data.getNumberOfColumns();
+    			var rows = data.getNumberOfRows();
+
+    			var CFRData = [];
+    			var SLXData = [];
+
+    			for (var r = 1; r < rows; r++) {
+        			if (data.getFormattedValue(r, 0) === 'CFR') {
+            				CFRData.push([
+                			data.getFormattedValue(r, 1),
+                			data.getFormattedValue(r, 2),
+                			data.getFormattedValue(r, 3),
+                			data.getFormattedValue(r, 4)
+            			]);
+        			}
+				else if (data.getFormattedValue(r, 0) === 'CF SLX') {
+            				SLXData.push([
+                			data.getFormattedValue(r, 1),
+                			data.getFormattedValue(r, 2),
+                			data.getFormattedValue(r, 3),
+                			data.getFormattedValue(r, 4)
+            			]);
+        			}
+    			}
+    			processCFRData(CFRData);
+    			processSLXData(SLXData);
 		}
 	</script>
 </head>
