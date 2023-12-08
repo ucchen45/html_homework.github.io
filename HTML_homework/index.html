@@ -23,6 +23,18 @@
 		margin-right: 10px;
 		}
 	</style>
+	
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(init);
+		function init() {
+	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+	  		var query = new google.visualization.Query(url);
+	  		query.setQuery('select *');
+	  		query.send(CFRData,SLXData);
+		}
+	</script>
 </head>
 <body>
 	<!--頂部區塊-->
@@ -54,17 +66,8 @@
 	<div class="container">
 	<h5>旗艦-CFR</h5>
 		<div class="row" id="cardR">
-		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		
 		<script>
-		google.charts.load('current', {'packages':['corechart']});
-		google.charts.setOnLoadCallback(init);
-		function init() {
-	  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-	  		var query = new google.visualization.Query(url);
-	  		query.setQuery('select *');
-	  		query.send(CFRData,SLXData);
-		}
-	
 		function CFRData(response){
 			var data = response.getDataTable();
 	  		var columns = data.getNumberOfColumns();
@@ -96,7 +99,6 @@
 	
 	<h5>高階-CF SLX</h5>
 	<div class="row" id="SLX">
-		<script src="https://www.gstatic.com/charts/loader.js"></script>
 		<script>
 		function SLXData(response){
 			var data = response.getDataTable();
