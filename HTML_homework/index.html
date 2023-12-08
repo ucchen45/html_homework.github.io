@@ -29,7 +29,17 @@
 		margin-left: 10px;
 		margin-right: 10px;
 		}
-		
+		body {
+  		background-image: url('https://drive.google.com/uc?export=view&id=1YUqa_8CZvjU1XSEyd4GQxhhY4ylijWW0');
+  		background-size: cover;
+  		background-repeat: no-repeat;
+  		background-position: center center;
+		background-attachment: fixed;
+		}
+		div, .container {
+  		background-color: rgba(255, 255, 255, 0.5);
+		color:black;
+		}
 	</style>
 </head>
 <body>
@@ -44,6 +54,7 @@
 		</ul>
 	</div>
 
+	<!--內容區域-->
 	<div class="container">
 		<!--前言-->
 		<h4>前言</h4>
@@ -92,48 +103,50 @@
 					}
 				</script>
 				<a href="javascript:CFRData();"></a>
-			</div>
-		<h5>高階-CF SLX</h5>
-			<div class="row" id="SLX">	
-				<script src="https://www.gstatic.com/charts/loader.js"></script>
-				<script>
-				google.charts.load('current', {'packages':['corechart']});
-				google.charts.setOnLoadCallback(init);
-				function init() {
-			  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-			  		var query = new google.visualization.Query(url);
-			  		query.setQuery('select *');
-			  		query.send(SLXData);
-				}
-				function SLXData(response){
-					var data = response.getDataTable();
-			  		var columns = data.getNumberOfColumns();
-			  		var rows = data.getNumberOfRows();
-			  		var sSLX = "";
-			  		for (var r=1 ; r<rows ; r++) {
-					if (data.getFormattedValue(r,0) === "CF SLX"){
-						sSLX+=	`
-						<div class="col s12 m12 l4">
-		  				<div class="card">
-							<div class="card-image">
-		  						<img src= ${data.getFormattedValue(r,3)}>
-								<span class="card-title">${data.getFormattedValue(r,1)}</span>
-							</div>
-							<div class="card-content">
-		  						<p>${data.getFormattedValue(r,2)}</p>
-							</div>
-							<div class="card-action">
-								<a href="${data.getFormattedValue(r,4)}">詳細資訊</a>
-		   					</div>
-						</div>
-		  				</div>`;}
-					}
-					document.getElementById("SLX").innerHTML=sSLX;
-					}
-				</script>
-				<a href="javascript:SLXData();"></a>
-			</div>
+				</div>
 	</div>
+	<div class="container">
+			<h5>高階-CF SLX</h5>
+				<div class="row" id="SLX">	
+					<script src="https://www.gstatic.com/charts/loader.js"></script>
+					<script>
+					google.charts.load('current', {'packages':['corechart']});
+					google.charts.setOnLoadCallback(init);
+					function init() {
+				  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+				  		var query = new google.visualization.Query(url);
+				  		query.setQuery('select *');
+				  		query.send(SLXData);
+					}
+					function SLXData(response){
+						var data = response.getDataTable();
+				  		var columns = data.getNumberOfColumns();
+				  		var rows = data.getNumberOfRows();
+				  		var sSLX = "";
+				  		for (var r=1 ; r<rows ; r++) {
+						if (data.getFormattedValue(r,0) === "CF SLX"){
+							sSLX+=	`
+							<div class="col s12 m12 l4">
+			  				<div class="card">
+								<div class="card-image">
+			  						<img src= ${data.getFormattedValue(r,3)}>
+									<span class="card-title">${data.getFormattedValue(r,1)}</span>
+								</div>
+								<div class="card-content">
+			  						<p>${data.getFormattedValue(r,2)}</p>
+								</div>
+								<div class="card-action">
+									<a href="${data.getFormattedValue(r,4)}">詳細資訊</a>
+			   					</div>
+							</div>
+			  				</div>`;}
+						}
+						document.getElementById("SLX").innerHTML=sSLX;
+						}
+					</script>
+					<a href="javascript:SLXData();"></a>
+				</div>
+		</div>
 	<div class="container">
 		<!--中部公路車地圖-->
 		<h4>中部公路車地圖</h4>
