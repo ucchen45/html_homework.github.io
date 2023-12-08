@@ -71,6 +71,7 @@
 	  		var rows = data.getNumberOfRows();
 	  		var s = "";
 	  		for (var r=1 ; r<rows ; r++) {
+			if (${data.getFormattedValue(r,0)} === "CFR"){
 				s+=	`
 				<div class="col s12 m12 l4">
   				<div class="card">
@@ -86,6 +87,7 @@
    					</div>
 				</div>
   				</div>`;}
+			}
 			document.getElementById("card").innerHTML=s;
 			}
 		</script>
