@@ -59,6 +59,15 @@
     		background-repeat: no-repeat;
 		}
 	</style>
+	<script>
+        window.onload = function() {
+            var disclaimerText = "本站僅供參考，購買資訊以Canyon官方網站為準。";
+            var disclaimerConfirmed = confirm(disclaimerText);
+            if (!disclaimerConfirmed) {
+		window.history.back();
+            }
+        };
+    </script>
 </head>
 <body>
 	<!--頂部區塊-->
