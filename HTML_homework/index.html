@@ -30,20 +30,22 @@
     		padding-bottom: 20px;
 		}
 		.brand-logo {
-        	text-align: left; /* Align the content to the left */
+        	display: flex;
+    		align-items: center;
+    		text-align: left;
     		}
 		.brand-logo p{
   		margin: 0;
-		align-items: center;
+    		margin-left: 10px;
 		}
 		@media screen and (max-width: 600px) {
-    		.brand-logo p {
-        	display: none; /* Hide the text */
-    		}
-		.brand-logo i{
-  		align-items: left;
-		margin-left: 10px;
-		margin-right: 10px;
+    			.brand-logo p {
+        		display: none;
+    			}
+			.brand-logo i{
+			margin-left: 10px;
+			margin-right: 10px;
+			}
 		}
 		div.card .card-title {
     		background-color: rgba(255, 255, 255, 0.3);
