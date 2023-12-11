@@ -19,6 +19,13 @@
         };
 	</script>
 	
+	<script>
+  	document.addEventListener('DOMContentLoaded', function() {
+    	var elems = document.querySelectorAll('.sidenav');
+    	var instances = M.Sidenav.init(elems);
+  	});
+	</script>
+	
 	<style>
 		.background-image {
     		background-image: url('https://drive.google.com/uc?export=view&id=1YUqa_8CZvjU1XSEyd4GQxhhY4ylijWW0');
@@ -68,7 +75,7 @@
 	<!--頂部區塊-->
 	<nav>
     	<div class="nav-wrapper">
-      		<a href="#" class="brand-logo left"><i class="material-icons">directions_bike</i>CANYON中文資訊論壇</a>
+      		<a href="#" class="brand-logo left"><i class="material-icons">directions_bike</i><p>CANYON中文資訊論壇</p></a>
       		<ul id="nav-mobile" class="right hide-on-med-and-down">
         		<li><a href="sass.html">CANYON公路車</a></li>
         		<li><a href="badges.html">中部公路車地圖</a></li>
