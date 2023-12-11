@@ -8,7 +8,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-	
+	<script>
+        window.onload = function() {
+            var disclaimerText = "本站僅供參考，購買資訊以Canyon官方網站為準。";
+            var disclaimerConfirmed = confirm(disclaimerText);
+            if (!disclaimerConfirmed) {
+		window.history.back();
+            }
+        };
+	</script>
 	<style>
 		nav {
   		position: fixed;
@@ -29,11 +37,15 @@
 		footer.page-footer {
     		padding-bottom: 20px;
 		}
+		
+  		.nav-title i {
+    		margin-left: 10px;
+    		margin-right: 10px;
+		}
 		@media screen and (max-width: 600px) {
   			.nav-title p {
     			display: none;
   			}
-
   			.nav-title i {
     			margin-left: 10px;
     			margin-right: 10px;
@@ -59,15 +71,6 @@
     		background-repeat: no-repeat;
 		}
 	</style>
-	<script>
-        window.onload = function() {
-            var disclaimerText = "本站僅供參考，購買資訊以Canyon官方網站為準。";
-            var disclaimerConfirmed = confirm(disclaimerText);
-            if (!disclaimerConfirmed) {
-		window.history.back();
-            }
-        };
-    </script>
 </head>
 <body>
 	<!--頂部區塊-->
