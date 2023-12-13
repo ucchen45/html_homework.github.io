@@ -35,30 +35,32 @@
     		background-repeat: no-repeat;
 		}
 		.nav-title {
-		display: flex;
+    		display: flex;
     		align-items: center;
-		width: 500px;
+    		width: 500px;
   		}
-		.nav-title h4 {
+  		.nav-title h4 {
     		margin: 0;
-		line-height: 1;
+    		line-height: 1;
     		vertical-align: middle;
   		}
-		@media screen and (max-width: 600px) {
-  			.nav-title h4 {
-    			display: none;
-  			}
-		}
-		nav {
-  		position: fixed;
-  		top: 0;
-  		width: 100%;
-  		z-index: 10;
-		}
-		nav, .nav-wrapper ,footer, .page-footer{
-		background-color: #424242;
-		z-index: 1;
-		}
+
+  		@media screen and (max-width: 600px) {
+    			.nav-title h4 {
+      			display: none;
+    			}
+  		}
+  		nav {
+    		position: fixed;
+    		top: 0;
+    		width: 100%;
+    		z-index: 10;
+  		}
+  		nav, .nav-wrapper,
+  		footer, .page-footer {
+    		background-color: #424242;
+    		z-index: 1;
+  		}
 		#mainContainer.container {
   		background-color: rgba(255, 255, 255, 0.5);
 		color:black;
