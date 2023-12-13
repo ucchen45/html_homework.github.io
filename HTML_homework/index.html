@@ -57,10 +57,11 @@
   		}
 		#mainContainer.container {
   		background-color: rgba(255, 255, 255, 0.5);
-		color:black;
-		height: calc(100% - 70px);
-		padding: 20px;
-		padding-top: 50px;
+    		color: black;
+    		height: calc(100vh - 70px); /* 使用視窗高度，減去 navbar 高度 */
+    		padding: 20px;
+    		padding-top: 50px;
+    		overflow-y: auto; 
 		}
 		footer.page-footer {
     		padding-bottom: 20px;
