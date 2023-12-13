@@ -24,6 +24,14 @@
 	</script>
 	
 	<style>
+		.background-container {
+    		position: absolute;
+    		top: 70px; /* 與 navbar 的高度相同 */
+   		left: 0;
+    		width: 100%;
+    		height: calc(100% - 70px); /* 減去 navbar 的高度 */
+    		z-index: 0; /* 將 z-index 設為較低的值 */
+		}
 		.background-image {
     		background-image: url('https://drive.google.com/uc?export=view&id=1YUqa_8CZvjU1XSEyd4GQxhhY4ylijWW0');
     		position: fixed;
