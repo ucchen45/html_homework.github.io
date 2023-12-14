@@ -85,14 +85,14 @@
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script>
     	google.charts.load('current', {'packages':['corechart']});
-    	google.charts.setOnLoadCallback(init("CFR"));
+    	
     	function init(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
         	query.setQuery("select * where A=tag");
         	query.send(processData); 
     	}
-
+	google.charts.setOnLoadCallback(init("CFR"));
     	function processData(response) {
         	var dataTable = response.getDataTable();
         	var rows = dataTable.getNumberOfRows();
