@@ -96,7 +96,7 @@
     	function processData(response) {
         	var dataTable = response.getDataTable();
         	var rows = dataTable.getNumberOfRows();
-		var columns = data.getNumberOfColumns();
+		var columns = dataTable.getNumberOfColumns();
 		var tag = dataTable.getFormattedValue(0,0);
 		var datas = [];
 		for (var r=1; r<rows; r++) {
@@ -131,7 +131,7 @@
 				</div>
 			</div>`;
 		}
-	}documement.getElementById(tag).innerHTML = card
+	}documement.getElementById(tag).innerHTML = card;
 	</script>
 </head>
 <body>
