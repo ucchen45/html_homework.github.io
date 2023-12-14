@@ -92,9 +92,6 @@
         	query.setQuery("select * where A='"+tag+"'");
         	query.send(processData); 
     	}
-	google.charts.setOnLoadCallback(function() {
-        	init("CFR");
-    	});
     	function processData(response) {
         	var dataTable = response.getDataTable();
         	var rows = dataTable.getNumberOfRows();
@@ -158,9 +155,11 @@
 		<p>因作者時間有限，本站目前暫且僅止於Shimano系統之公路車相關資訊，還請見諒。</p>
 
 		<!--車款資訊-->
-		<h4 id="1">Canyon公路車</h4>
+		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
-		<div class="row" id="CFR"></div>
+		<div class="row" id="CFR">
+			<a>javascript:init("CFR");</a>
+		</div>
 	
 		<h5>高階-CF SLX</h5>
 		<div class="row" id="CFR"></div>
