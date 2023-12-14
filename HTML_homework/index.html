@@ -89,7 +89,7 @@
     	function init(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
-        	query.setQuery("select * where A=tag");
+        	query.setQuery("select * where A='"+tag+"'");
         	query.send(processData); 
     	}
 	google.charts.setOnLoadCallback(init("CFR"));
