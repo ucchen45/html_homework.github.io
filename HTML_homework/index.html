@@ -85,49 +85,51 @@
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script>
     	google.charts.load('current', {'packages':['corechart']});
-    	google.charts.setOnLoadCallback(init);
-
-    	function init() {
+    	google.charts.setOnLoadCallback(init("CFR"));
+    	function init(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
-        	query.setQuery('select *');
+        	query.setQuery("select * where A=tag");
         	query.send(processData); 
     	}
 
     	function processData(response) {
-        	var data = response.getDataTable();
-        	var columns = data.getNumberOfColumns();
-        	var rows = data.getNumberOfRows();
-		var tag = data.getFormattedValue(r, 0)
-        	
-		var CFRData = [];
-		var SLXData = [];
-		
-		for (var r = 1; r < rows; r++) {
-            		if (tag === "CFR") {
-                		CFRData.push([
-                    		data.getFormattedValue(r, 1),
-                    		data.getFormattedValue(r, 2),
-                    		data.getFormattedValue(r, 3),
-                    		data.getFormattedValue(r, 4)
-                	]);
-            		}
-			else if tag === "CF SLX"{
-				SLXData.push([
-                    		data.getFormattedValue(r, 1),
-                    		data.getFormattedValue(r, 2),
-                    		data.getFormattedValue(r, 3),
-                    		data.getFormattedValue(r, 4)
-                	]);
+        	var dataTable = response.getDataTable();
+        	var rows = dataTable.getNumberOfRows();
+		var columns = data.getNumberOfColumns();
+		var tag = dataTable.getFormattedValue(0,0);
+		var datas = [];
+		for (var r=1; r<rows; r++) {
+			data = [];
+			for (var i=1; i<columns; i++){
+				data.push(dataTable.getFormattedValue(r, i));
 			}
+			datas.push(data);
         	}
-		bikeCard(CFRData);
-		bikeCard(SLXData);
+		if (tag === "CFR"){
+			fCard(datas,tag);
+		}
     	}
 
-    	function bikeCard(data) {
-		//呈現內容
-	}
+    	function fCard(data,tag) {	
+		for (var r=1 ; r<data.length ; r++) {
+			card+=	`
+			<div class="col s12 m12 l4">
+				<div class="card">
+					<div class="card-image">
+			  			<img src=${data[r][3]}>
+						<span class="card-title">${data[r][1]}</span>
+					</div>
+					<div class="card-content">
+			  			<p>${data[r][2]}</p>
+       						<p>重量(車架)：${data[r][4]}</p>
+					</div>
+					<div class="card-action">
+						<a href="#">詳細資訊</a>
+			   		</div>
+				</div>
+			</div>`;}
+	}documement.getElementById(tag).innerHTML = card
 	</script>
 </head>
 <body>
@@ -142,7 +144,8 @@
 		</ul>
 	</div>
 	</nav>
-
+	
+	<!--內文-->
 	<div class="background-image"></div>
 
 	<div class="container" id="mainContainer">
@@ -153,14 +156,10 @@
 		<!--車款資訊-->
 		<h4 id="1">Canyon公路車</h4>
 		<h5>旗艦-CFR</h5>
-			<div class="row" id="cardR">
-				<a href="javascript:CFRData();"></a>
-			</div>
+		<div class="row" id="CFR"></div>
 	
-			<h5>高階-CF SLX</h5>
-				<div class="row" id="SLX">	
-					<a href="javascript:SLXData();"></a>
-				</div>
+		<h5>高階-CF SLX</h5>
+		<div class="row" id="CFR"></div>
 
 		<!--中部公路車地圖-->
 		<h4 id="2">中部公路車地圖</h4>
