@@ -11,18 +11,6 @@
 
 	<title>CANYON中文資訊論壇</title>
 	
-	<script>
-        window.onload = function() {
-        	var disclaimerText = 
-		`本站資訊僅供參考，購買時請以CANYON官方網站為準。
-如有謬誤，還請不吝指正。`;
-            	var disclaimerConfirmed = confirm(disclaimerText);
-            	if (!disclaimerConfirmed) {
-			window.history.back();
-            	}
-        	};
-	</script>
-	
 	<style>
 		:root {
   		scroll-padding-top: 60px;
@@ -85,7 +73,17 @@
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script>
     	google.charts.load('current', {'packages':['corechart']});
-    	
+
+	window.onload = function() {
+        	var disclaimerText = 
+		`本站資訊僅供參考，購買時請以CANYON官方網站為準。
+如有謬誤，還請不吝指正。`;
+            	var disclaimerConfirmed = confirm(disclaimerText);
+            	if (!disclaimerConfirmed) {
+			window.history.back();
+            	}
+        	};
+		
     	function init(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
