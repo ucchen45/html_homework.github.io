@@ -106,13 +106,13 @@
 			datas.push(data);
         	}
 		if (tag === "CFR"){
-			fCard(datas,tag);
+			fCard(datas);
 		}
     	}
 
-    	function fCard(data,tag) {	
+    	function fCard(data) {	
 		var card = "";
-		for (var r=1 ; r<data.length ; r++) {
+		for (var r=0 ; r<data.length ; r++) {
 			card+=	`
 			<div class="col s12 m12 l4">
 				<div class="card">
@@ -129,7 +129,7 @@
 			   		</div>
 				</div>
 			</div>`;
-		}document.getElementById("CFR").innerHTML = card;
+		}document.getElementById("card").innerHTML = card;
 	}
 	</script>
 </head>
@@ -157,7 +157,7 @@
 		<!--車款資訊-->
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
-		<div class="row" id="CFR">
+		<div class="row" id="card">
 			<a href="javascript:init('CFR');">a</a>
 		</div>
 	
