@@ -92,7 +92,9 @@
         	query.setQuery("select * where A='"+tag+"'");
         	query.send(processData); 
     	}
-	google.charts.setOnLoadCallback(init("CFR"));
+	google.charts.setOnLoadCallback(function() {
+        	init("CFR");
+    	});
     	function processData(response) {
         	var dataTable = response.getDataTable();
         	var rows = dataTable.getNumberOfRows();
