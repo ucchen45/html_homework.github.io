@@ -98,7 +98,7 @@
 		var columns = dataTable.getNumberOfColumns();
 		var tag = dataTable.getFormattedValue(0,0);
 		var datas = [];
-		for (var r=1; r<rows; r++) {
+		for (var r=0; r<rows; r++) {
 			data = [];
 			for (var i=1; i<columns; i++){
 				data.push(dataTable.getFormattedValue(r, i));
