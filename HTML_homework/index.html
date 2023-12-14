@@ -81,6 +81,54 @@
 		}
     	}
 	</script>
+
+	<script src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+    	google.charts.load('current', {'packages':['corechart']});
+    	google.charts.setOnLoadCallback(init);
+
+    	function init() {
+        	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+        	var query = new google.visualization.Query(url);
+        	query.setQuery('select *');
+        	query.send(processData); 
+    	}
+
+    	function processData(response) {
+        	var data = response.getDataTable();
+        	var columns = data.getNumberOfColumns();
+        	var rows = data.getNumberOfRows();
+		var tag = data.getFormattedValue(r, 0)
+        	
+		var CFRData = [];
+		var SLXData = [];
+		
+		for (var r = 1; r < rows; r++) {
+            		if (tag === "CFR") {
+                		CFRData.push([
+                    		data.getFormattedValue(r, 1),
+                    		data.getFormattedValue(r, 2),
+                    		data.getFormattedValue(r, 3),
+                    		data.getFormattedValue(r, 4)
+                	]);
+            		}
+			else if tag === "CF SLX"{
+				SLXData.push([
+                    		data.getFormattedValue(r, 1),
+                    		data.getFormattedValue(r, 2),
+                    		data.getFormattedValue(r, 3),
+                    		data.getFormattedValue(r, 4)
+                	]);
+			}
+        	}
+		bikeCard(CFRData);
+		bikeCard(SLXData);
+    	}
+
+    	function bikeCard(data) {
+		//呈現內容
+	}
+	</script>
 </head>
 <body>
 	<!--頂部區塊-->
@@ -106,84 +154,11 @@
 		<h4 id="1">Canyon公路車</h4>
 		<h5>旗艦-CFR</h5>
 			<div class="row" id="cardR">
-				<script src="https://www.gstatic.com/charts/loader.js"></script>
-				<script>
-				google.charts.load('current', {'packages':['corechart']});
-				google.charts.setOnLoadCallback(init);
-				function init() {
-			  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-			  		var query = new google.visualization.Query(url);
-			  		query.setQuery('select *');
-			  		query.send(CFRData);
-				}
-			
-				function CFRData(response){
-					var data = response.getDataTable();
-			  		var columns = data.getNumberOfColumns();
-			  		var rows = data.getNumberOfRows();
-			  		var sR = "";
-			  		for (var r=1 ; r<rows ; r++) {
-					if (data.getFormattedValue(r,0) === "CFR"){
-						sR+=	`
-						<div class="col s12 m12 l4">
-			  				<div class="card">
-								<div class="card-image">
-			  						<img src= ${data.getFormattedValue(r,3)}>
-									<span class="card-title">${data.getFormattedValue(r,1)}</span>
-								</div>
-								<div class="card-content">
-			  						<p>${data.getFormattedValue(r,2)}</p>
-								</div>
-								<div class="card-action">
-									<a href="${data.getFormattedValue(r,4)}">詳細資訊</a>
-			   					</div>
-							</div>
-		  				</div>`;}
-					}
-					document.getElementById("cardR").innerHTML=sR;
-					}
-				</script>
 				<a href="javascript:CFRData();"></a>
 			</div>
 	
 			<h5>高階-CF SLX</h5>
 				<div class="row" id="SLX">	
-					<script src="https://www.gstatic.com/charts/loader.js"></script>
-					<script>
-					google.charts.load('current', {'packages':['corechart']});
-					google.charts.setOnLoadCallback(init);
-					function init() {
-				  		var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
-				  		var query = new google.visualization.Query(url);
-				  		query.setQuery('select *');
-				  		query.send(SLXData);
-					}
-					function SLXData(response){
-						var data = response.getDataTable();
-				  		var columns = data.getNumberOfColumns();
-				  		var rows = data.getNumberOfRows();
-				  		var sSLX = "";
-				  		for (var r=1 ; r<rows ; r++) {
-						if (data.getFormattedValue(r,0) === "CF SLX"){
-							sSLX+=	`
-							<div class="col s12 m12 l4">
-			  				<div class="card">
-								<div class="card-image">
-			  						<img src= ${data.getFormattedValue(r,3)}>
-									<span class="card-title">${data.getFormattedValue(r,1)}</span>
-								</div>
-								<div class="card-content">
-			  						<p>${data.getFormattedValue(r,2)}</p>
-								</div>
-								<div class="card-action">
-									<a href="${data.getFormattedValue(r,4)}">詳細資訊</a>
-			   					</div>
-							</div>
-			  				</div>`;}
-						}
-						document.getElementById("SLX").innerHTML=sSLX;
-						}
-					</script>
 					<a href="javascript:SLXData();"></a>
 				</div>
 
