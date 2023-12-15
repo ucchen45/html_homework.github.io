@@ -79,7 +79,9 @@
         	var query = new google.visualization.Query(url);
         	query.setQuery("select * where A='"+tag+"'");
         	query.send(processData);
-		document.getElementById("spawn").click();
+		setTimeout(function() {
+        		document.getElementById("spawn").click();
+    		}, 1000);
     	}
     	function processData(response) {
         	var dataTable = response.getDataTable();
