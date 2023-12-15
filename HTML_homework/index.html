@@ -96,7 +96,10 @@
 			}
 			datas.push(data);
         	}
-		if (tag === "CFR" || tag==="CF SLX"){
+		if (tag === "CFR"){
+			fCard(datas);
+		}
+		else if (tag === "CF SLX"){
 			fCard(datas);
 		}
     	}
