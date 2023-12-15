@@ -97,14 +97,14 @@
 			datas.push(data);
         	}
 		if (tag === "CFR"){
-			fCard(datas);
+			fCard(datas,tag);
 		}
 		else if (tag === "CF SLX"){
-			fCard(datas);
+			fCard(datas,tag);
 		}
     	}
 
-    	function fCard(data) {	
+    	function fCard(data,tag) {	
 		var card = "";
 		for (var r=0 ; r<data.length ; r++) {
 			card+=	`
@@ -123,7 +123,13 @@
 			   		</div>
 				</div>
 			</div>`;
-		}document.getElementById("card").innerHTML = card;
+		}
+		if (tag === "CFR") {
+			document.getElementById("cardCFR").innerHTML = card;
+		}
+		else if (tag === "CF SLX") {
+			document.getElementById("cardCFSLX").innerHTML = card;
+		}
 	}
 	
 	window.onload = function () {
@@ -162,12 +168,12 @@
 		<!--車款資訊-->
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
-		<div class="row" id="card">
+		<div class="row" id="cardCFR">
 			<a onclick="init('CFR')" id="spawn">載入中</a>
 		</div>
 	
 		<h5>高階-CF SLX</h5>
-		<div class="row" id="CFR">
+		<div class="row" id="cardCFSLX">
 			<a onclick="init('CF SLX')" id="spawn">載入中</a>
 		</div>
 
