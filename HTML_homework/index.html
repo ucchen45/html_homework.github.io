@@ -78,7 +78,8 @@
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
         	query.setQuery("select * where A='"+tag+"'");
-        	query.send(processData); 
+        	query.send(processData);
+		document.getElementById("spawn").click();
     	}
     	function processData(response) {
         	var dataTable = response.getDataTable();
@@ -118,7 +119,6 @@
 				</div>
 			</div>`;
 		}document.getElementById("card").innerHTML = card;
-		document.getElementById("spawn").click();
 	}
 	
 	window.onload = function () {
