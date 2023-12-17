@@ -135,7 +135,8 @@
     		var disclaimerConfirmed = confirm(disclaimerText);
     
     		if (disclaimerConfirmed) {
-        		document.getElementById("spawn").click();
+        		document.getElementById("spawnCFR").click();
+        		document.getElementById("spawnCFSLX").click();
     		}
 		else {
         		window.history.back();
@@ -168,12 +169,12 @@
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
 		<div class="row" id="cardCFR">
-			<a onclick="init('CFR')" id="spawn">載入中</a>
+			<a onclick="init('CFR')" id="spawnCFR">載入中</a>
 		</div>
 	
 		<h5>高階-CF SLX</h5>
 		<div class="row" id="cardCFSLX">
-			<a onclick="init('CF SLX')" id="spawn">載入中</a>
+			<a onclick="init('CF SLX')" id="spawnCFSLX">載入中</a>
 		</div>
 
 		<!--中部公路車地圖-->
