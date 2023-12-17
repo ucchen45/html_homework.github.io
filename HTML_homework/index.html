@@ -70,11 +70,12 @@
     	}
 	</script>
 
+	<!--讀取自行車資訊試算表-->
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
     	google.charts.load('current', {'packages':['corechart']});
 		
-    	function init(tag) {
+    	function bikeLoad(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
         	query.setQuery("select * where A='"+tag+"'");
@@ -94,11 +95,11 @@
 			datas.push(data);
         	}
 		if (tag==="CFR"||tag==="CF SLX"){
-			fCard(datas,tag);
+			bikeCard(datas,tag);
 		}
     	}
 
-    	function fCard(data,tag) {	
+    	function bikeCard(data,tag) {	
 		var card = "";
 		for (var r=0 ; r<data.length ; r++) {
 			card+=	`
@@ -173,12 +174,12 @@
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
 		<div class="row" id="cardCFR">
-			<a onclick="init('CFR')" id="spawnCFR">載入中</a>
+			<a onclick="bikeLoad('CFR')" id="spawnCFR">載入中</a>
 		</div>
 	
 		<h5>高階-CF SLX</h5>
 		<div class="row" id="cardCFSLX">
-			<a onclick="init('CF SLX')" id="spawnCFSLX">載入中</a>
+			<a onclick="bikeLoad('CF SLX')" id="spawnCFSLX">載入中</a>
 		</div>
 
 		<!--臺中自行車地圖-->
