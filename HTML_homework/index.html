@@ -75,7 +75,7 @@
 	<script type="text/javascript">
     	google.charts.load('current', {'packages':['corechart']});
 		
-    	function bikeLoad(tag) {
+    	function load(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
         	query.setQuery("select * where A='"+tag+"'");
@@ -96,6 +96,9 @@
         	}
 		if (tag==="CFR"||tag==="CF SLX"){
 			bikeCard(datas,tag);
+		}
+		else if (tag==="MAP SPOT"){
+			mapCard(datas,tag);
 		}
     	}
 
@@ -126,6 +129,24 @@
 			document.getElementById("cardCFSLX").innerHTML = card;
 		}
 	}
+
+	function mapCard(data,tag) {
+		var card="";
+		for (var r=0 ; r<data.length ; r++) {
+			card+=`<div class="col s12 m12 l6">
+   					<div class="card">
+   					<div class="card-content">					
+	 					<span class="card-title">${data[r][0]}</span>
+  						${data[r][2]}
+  						<p>${data[r][1]}</p>
+  					</div>
+   					</div>
+      				</div>`;
+		}if (tag === "MAP SPOT") {
+			document.getElementById("mapSPOT").innerHTML = card;
+		}
+		
+	}
 	
 	window.onload = function () {
     		var disclaimerText = `本站資訊僅供參考，購買時請以CANYON官方網站為準。
@@ -135,6 +156,7 @@
     		if (disclaimerConfirmed) {
         		document.getElementById("spawnCFR").click();
         		document.getElementById("spawnCFSLX").click();
+			document.getElementById("spawnMAPSPOT").click();
     		}
 		else {
         		 window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
@@ -174,18 +196,18 @@
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
 		<div class="row" id="cardCFR">
-			<a onclick="bikeLoad('CFR')" id="spawnCFR">載入中</a>
+			<a onclick="load('CFR')" id="spawnCFR">載入中</a>
 		</div>
 	
 		<h5>高階-CF SLX</h5>
 		<div class="row" id="cardCFSLX">
-			<a onclick="bikeLoad('CF SLX')" id="spawnCFSLX">載入中</a>
+			<a onclick="load('CF SLX')" id="spawnCFSLX">載入中</a>
 		</div>
 
 		<!--臺中自行車地圖-->
-		<h4 id="2">臺中自行車地圖</h4>
-		<iframe src="https://www.google.com/maps/d/embed?mid=1pI0Dk4pGhPSyYIdcLPtJwW7e3pyjpdY&ehbc=2E312F" width="640" height="480"></iframe>
-		<iframe src="https://www.google.com/maps/d/embed?mid=1XSU9iWrADdrp76TR_C8eMFZuPyHQt0Fh&ehbc=2E312F" width="640" height="480"></iframe>
+		<h4 id="2">臺中自行車地圖</h4><div class="row" id="cardCFR">
+			<a onclick="load('MAP SPOT')" id="spawnMAPSPOT">載入中</a>
+		</div>
 		
 		<!--留言板-->
 		<h4 id="3">留言板</h4>
