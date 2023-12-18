@@ -137,7 +137,7 @@
    					<div class="card">
    					<div class="card-content">					
 	 					<span class="card-title">${data[r][0]}</span>
-  						${data[r][2]}
+  						<iframe src="${data[r][2]}" width="100%" height="80%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   						<p>${data[r][1]}</p>
   					</div>
    					</div>
@@ -205,7 +205,9 @@
 		</div>
 
 		<!--臺中自行車地圖-->
-		<h4 id="2">臺中自行車地圖</h4><div class="row" id="mapSPOT">
+		<h4 id="2">臺中自行車地圖</h4>
+		<h5>交流地點</h5>
+		<div class="row" id="mapSPOT">
 			<a onclick="load('MAP SPOT')" id="spawnMAPSPOT">載入中</a>
 		</div>
 		
@@ -214,7 +216,7 @@
 	</div>
 		
 	<!--底部-->
-	<footer class="page-footer">          
+	<footer class="page-footer">
     	<div class="row">
 	<div class="col l3 m1 s2"></div>
 	<div class="col l2 m4 s10">
