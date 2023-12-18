@@ -144,8 +144,9 @@
       				</div>`;
 		}if (tag === "MAP SPOT") {
 			document.getElementById("mapSPOT").innerHTML = card;
+		}else if (tag === "MAP NEWBIE") {
+			document.getElementById("mapNEWBIE").innerHTML = card;
 		}
-		
 	}
 	
 	window.onload = function () {
@@ -157,6 +158,7 @@
         		document.getElementById("spawnCFR").click();
         		document.getElementById("spawnCFSLX").click();
 			document.getElementById("spawnMAPSPOT").click();
+			document.getElementById("spawnMAPNEWBIE").click();
     		}
 		else {
         		 window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
@@ -211,7 +213,9 @@
 			<a onclick="load('MAP SPOT')" id="spawnMAPSPOT">載入中</a>
 		</div>
 		<h5>路線-入門</h5>
-		
+		<div class="row" id="mapNEWBIE">
+			<a onclick="load('MAP NEWBIE')" id="spawnMAPNEWBIE">載入中</a>
+		</div>
 		<!--留言板-->
 		<h4 id="3">留言板</h4>
 	</div>
