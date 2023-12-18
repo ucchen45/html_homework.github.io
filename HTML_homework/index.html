@@ -97,7 +97,7 @@
 		if (tag==="CFR"||tag==="CF SLX"){
 			bikeCard(datas,tag);
 		}
-		else if (tag==="MAP SPOT"||tag==="MAP NEWBIE"){
+		else if (tag==="MAP SPOT"||tag==="MAP NEWBIE"||tag==="MAP EASY"||tag==="MAP HARD"||tag==="MAP EXTREME"){
 			mapCard(datas,tag);
 		}
     	}
@@ -146,6 +146,14 @@
 			document.getElementById("mapSPOT").innerHTML = card;
 		}else if (tag === "MAP NEWBIE") {
 			document.getElementById("mapNEWBIE").innerHTML = card;
+		}else if (tag === "MAP EASY") {
+			document.getElementById("mapEASY").innerHTML = card;
+		}else if (tag === "MAP NORMAL") {
+			document.getElementById("mapNORMAL").innerHTML = card;
+		}else if (tag === "MAP HARD") {
+			document.getElementById("mapHARD").innerHTML = card;
+		}else if (tag === "MAP EXTREME") {
+			document.getElementById("mapEXTREME").innerHTML = card;
 		}
 	}
 	
@@ -159,6 +167,10 @@
         		document.getElementById("spawnCFSLX").click();
 			document.getElementById("spawnMAPSPOT").click();
 			document.getElementById("spawnMAPNEWBIE").click();
+			document.getElementById("spawnMAPEASY").click();
+			document.getElementById("spawnMAPNORMAL").click();
+			document.getElementById("spawnMAPHARD").click();
+			document.getElementById("spawnMAPEXTREME").click();
     		}
 		else {
         		 window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
@@ -208,14 +220,37 @@
 
 		<!--臺中自行車地圖-->
 		<h4 id="2">臺中自行車地圖</h4>
+		
 		<h5>交流地點</h5>
 		<div class="row" id="mapSPOT" style="height: 500px;">
 			<a onclick="load('MAP SPOT')" id="spawnMAPSPOT">載入中</a>
 		</div>
+		
 		<h5>路線-入門</h5>
 		<div class="row" id="mapNEWBIE" style="height: 500px;">
 			<a onclick="load('MAP NEWBIE')" id="spawnMAPNEWBIE">載入中</a>
 		</div>
+
+		<h5>路線-簡單</h5>
+		<div class="row" id="mapEASY" style="height: 500px;">
+			<a onclick="load('MAP EASY')" id="spawnMAPEASY">載入中</a>
+		</div>
+
+		<h5>路線-普通</h5>
+		<div class="row" id="mapNORMAL" style="height: 500px;">
+			<a onclick="load('MAP NORMAL')" id="spawnMAPNORMAL">載入中</a>
+		</div>
+
+		<h5>路線-困難</h5>
+		<div class="row" id="mapHARD" style="height: 500px;">
+			<a onclick="load('MAP HARD')" id="spawnMAPHARD">載入中</a>
+		</div>
+		
+		<h5>路線-極限</h5>
+		<div class="row" id="mapEXTREME" style="height: 500px;">
+			<a onclick="load('MAP EXTREME')" id="spawnMAPEXTREME">載入中</a>
+		</div>
+		
 		<!--留言板-->
 		<h4 id="3">留言板</h4>
 	</div>
