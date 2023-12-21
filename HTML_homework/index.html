@@ -33,6 +33,10 @@
 		padding: 20px;
 		padding-top: 50px;
 		}
+		#comment.container {
+		background-color: rgba(255, 255, 255, 1);
+		color:black;
+		}
 		nav {
     		position: fixed;
     		top: 0;
@@ -53,11 +57,6 @@
     		border-radius: 10px;
 		color: black !important;
   		font-weight: bold;
-		}
-		.input-field input[type=text],
-		.input-field textarea {
-    		background-color: rgba(255, 255, 255, 1);
-    		color: black;
 		}
 		@media screen and (max-width: 650px) {
     			.hide-on-custom {
@@ -264,7 +263,7 @@
 		
 		<!--留言板-->
 		<h4 id="3">留言板</h4>
-		<div class="container">
+		<div class="container" id="comment">
 			<p>無須登入，快來與車友們交換意見吧。</p>
 			<div class="input-field">
           			<i class="material-icons prefix">account_circle</i>
