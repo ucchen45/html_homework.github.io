@@ -2,11 +2,8 @@
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 	<title>CANYON中文資訊論壇</title>
@@ -64,19 +61,30 @@
     			border-bottom: 1px solid #000;
     			color: #424242;
 		}
-		.input-field input[type="text"]:not(.browser-default):focus,
-		.input-field textarea.materialize-textarea:focus,
-		.input-field i.prefix:focus {
-    			border-bottom: 1px solid #2196F3;
-    			box-shadow: 0 1px 0 0 #2196F3;
-			color: #2196F3;
-		}
 		.input-field label {
     			color: #424242;
 		}
 		.input-field i.prefix {
     			color: #000;
 		}
+		.input-field input[type=text]:focus + label {
+     			color: #2196F3;
+   		}
+		.input-field input[type=text]:focus {
+     			border-bottom: 1px solid #2196F3;
+     			box-shadow: 0 1px 0 0 #2196F3;
+   		}
+		.input-field input[type=text].valid {
+     			border-bottom: 1px solid #4caf50;
+     			box-shadow: 0 1px 0 0 #4caf50;
+   		}
+		.input-field input[type=text].invalid {
+     			border-bottom: 1px solid #f44336 ;
+     			box-shadow: 0 1px 0 0 #f44336;
+   		}
+		.input-field .prefix.active {
+     			color: #2196F3;
+   		}
 		@media screen and (max-width: 650px) {
     			.hide-on-custom {
       			display: none !important;
