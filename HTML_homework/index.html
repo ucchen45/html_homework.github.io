@@ -59,6 +59,15 @@
 		color: black !important;
   		font-weight: bold;
 		}
+		.input-field input[type="text"]:not(.browser-default):focus,
+		.input-field textarea.materialize-textarea:focus {
+    			border-bottom: 1px solid #2196F3;
+    			box-shadow: 0 1px 0 0 #2196F3;
+		}
+.input-field input[type="text"]:not(.browser-default),
+.input-field textarea.materialize-textarea {
+    border-bottom: 1px solid #000; /* 黑色 */
+}
 		@media screen and (max-width: 650px) {
     			.hide-on-custom {
       			display: none !important;
