@@ -61,10 +61,10 @@
 		.input-field i.prefix {
     			color: #000;
 		}
-		.input-field input[type=text]:focus + label {
+		.input-field input[type=text]:focus + label:not(.browser-default) {
      			color: #2196F3;
    		}
-		.input-field input[type=text]:focus {
+		.input-field input[type=text]:not(.browser-default):focus {
      			border-bottom: 1px solid #2196F3;
      			box-shadow: 0 1px 0 0 #2196F3;
    		}
