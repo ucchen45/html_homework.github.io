@@ -92,7 +92,7 @@
 	
 	<script>
     	function scrollToElement(id) {
-		var element = document.getElementById(id);
+        	var element = document.getElementById(id);
         	if (element) {
             	element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 		}
@@ -208,7 +208,7 @@
 	<!--頂部區塊-->
 	<nav>
     	<div class="nav-wrapper">
-      		<a href="#" onclick="event.preventDefault();scrollToElement('0')" class="brand-logo left">CANYON中文資訊論壇</a>
+      		<a href="#" onclick="scrollToElement('0')" class="brand-logo left">CANYON中文資訊論壇</a>
       		<ul id="nav-mobile" class="right">
         		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('1')">CANYON公路車</a></li>
         		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('2')">臺中自行車地圖</a></li>
