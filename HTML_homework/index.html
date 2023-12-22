@@ -191,14 +191,14 @@
 如有謬誤，還請不吝指正。`;
     		var disclaimerConfirmed = confirm(disclaimerText);
     		if (disclaimerConfirmed) {
-		document.getElementById("spawnCFR").click();
-        	document.getElementById("spawnCFSLX").click();
-		document.getElementById("spawnMAPSPOT").click();
-		document.getElementById("spawnMAPNEWBIE").click();
-		document.getElementById("spawnMAPEASY").click();
-		document.getElementById("spawnMAPNORMAL").click();
-		document.getElementById("spawnMAPHARD").click();
-		document.getElementById("spawnMAPEXTREME").click();
+			document.getElementById("spawnCFR").click();
+        		document.getElementById("spawnCFSLX").click();
+			document.getElementById("spawnMAPSPOT").click();
+			document.getElementById("spawnMAPNEWBIE").click();
+			document.getElementById("spawnMAPEASY").click();
+			document.getElementById("spawnMAPNORMAL").click();
+			document.getElementById("spawnMAPHARD").click();
+			document.getElementById("spawnMAPEXTREME").click();
 		}
     		else {
         		window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
@@ -238,7 +238,7 @@
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
 		<div class="row" id="cardCFR">
-			<div onclick="load('CFR')" id="spawnCFR">載入中</div>
+			<a onclick="load('CFR')" id="spawnCFR">載入中</a>
 		</div>
 	
 		<h5>高階-CF SLX</h5>
