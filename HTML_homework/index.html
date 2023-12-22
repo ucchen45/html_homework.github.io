@@ -2,15 +2,11 @@
 <html>
 <head>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-	<title>CANYON中文資訊論壇</title>
-	
+	<title>CANYON中文資訊論壇</title>	
 	<style>
 		:root {
   		scroll-padding-top: 64px;
@@ -31,12 +27,13 @@
   		background-color: rgba(255, 255, 255, 0.5);
 		color:black;
 		padding: 20px;
-		padding-top: 50px;
+		padding-top: 64px;
 		}
 		#comment.container {
 		background-color: rgba(255, 255, 255, 1);
 		color:black;
 		padding: 30px;
+		padding-top: 15px;
 		}
 		nav {
     		position: fixed;
@@ -59,6 +56,33 @@
 		color: black !important;
   		font-weight: bold;
 		}
+		.input-field label {
+    			color: #424242;
+		}
+		.input-field i.prefix {
+    			color: #000;
+		}
+		.input-field input[type=text]:focus + label:not(.browser-default),
+		.input-field textarea.materialize-textarea:focus + label {
+     			color: #2196F3;
+   		}
+		.input-field input[type=text]:not(.browser-default):focus,
+		.input-field textarea.materialize-textarea:focus {
+     			border-bottom: 1px solid #2196F3;
+     			box-shadow: 0 1px 0 0 #2196F3;
+   		}
+		.input-field input[type=text].valid {
+     			border-bottom: 1px solid #4caf50;
+     			box-shadow: 0 1px 0 0 #4caf50;
+   		}
+		.input-field input[type=text].invalid,
+		.input-field textarea.materialize-textarea.invalid {
+     			border-bottom: 1px solid #f44336 ;
+     			box-shadow: 0 1px 0 0 #f44336;
+   		}
+		.input-field .prefix.active {
+     			color: #2196F3;
+   		}
 		@media screen and (max-width: 650px) {
     			.hide-on-custom {
       			display: none !important;
@@ -68,7 +92,7 @@
 	
 	<script>
     	function scrollToElement(id) {
-        	var element = document.getElementById(id);
+		var element = document.getElementById(id);
         	if (element) {
             	element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 		}
@@ -184,7 +208,7 @@
 	<!--頂部區塊-->
 	<nav>
     	<div class="nav-wrapper">
-      		<a href="#" onclick="scrollToElement('0')" class="brand-logo left">CANYON中文資訊論壇</a>
+      		<a href="#" onclick="event.preventDefault();scrollToElement('0')" class="brand-logo left">CANYON中文資訊論壇</a>
       		<ul id="nav-mobile" class="right">
         		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('1')">CANYON公路車</a></li>
         		<li class="hide-on-custom"><a href="#" onclick="event.preventDefault();scrollToElement('2')">臺中自行車地圖</a></li>
@@ -266,6 +290,7 @@
 		<h4 id="3">留言板</h4>
 		<div class="container" id="comment">
 			<p>無須登入，快來與車友們交換意見吧。</p>
+			<hr color="white">
 			<div class="input-field">
           			<i class="material-icons prefix">account_circle</i>
           			<input id="icon_prefix" type="text" class="validate" data-length="20">
@@ -275,9 +300,11 @@
           			<textarea id="textarea1" class="materialize-textarea"></textarea>
           			<label for="textarea1">留言內容</label>
         		</div>
-			<button class="btn waves-effect waves-light" type="submit" name="action">送出
+			<div class="right-align">
+				<button class="btn waves-effect waves-light blue" type="submit" name="action">送出
     				<i class="material-icons right">send</i>
-  			</button>
+  				</button>
+			</div>
 		</div>
 	</div>
 		
@@ -288,7 +315,7 @@
 	<div class="col l2 m4 s10">
                 <h5 class="white-text">關於作者</h5>
                 <p class="grey-text text-lighten-3">陳又晞，目前就讀中興大學，自由車社成員，自行車愛好者。</p>
-		<p class="grey-text text-lighten-3"><i class="material-icons" style="font-size: 15px">email</i>youxichen55@gmail.com</p>
+		<p class="grey-text text-lighten-3"><i class="material-icons prefix" style="font-size: 20px">email</i>youxichen55@gmail.com</p>
         </div>
 	<div class="col l0 m2 s2"></div>
 	<div class="col l4 m4 s10">
