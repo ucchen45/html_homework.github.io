@@ -62,10 +62,6 @@
 		.input-field i.prefix {
     			color: #000;
 		}
-		.input-field input[type=text]:focus:not(.browser-default),
-		.input-field textarea.materialize-textarea:focus{
-     			color: #2196F3;
-   		}
 		.input-field input[type=text]:focus + label:not(.browser-default),
 		.input-field textarea.materialize-textarea:focus + label {
      			color: #2196F3;
@@ -75,8 +71,7 @@
      			border-bottom: 1px solid #2196F3;
      			box-shadow: 0 1px 0 0 #2196F3;
    		}
-		.input-field input[type=text].valid,
-		.input-field textarea.materialize-textarea.valid {
+		.input-field input[type=text].valid {
      			border-bottom: 1px solid #4caf50;
      			box-shadow: 0 1px 0 0 #4caf50;
    		}
@@ -241,12 +236,12 @@
 		<h4 id="1">CANYON公路車</h4>
 		<h5>旗艦-CFR</h5>
 		<div class="row" id="cardCFR">
-			<a href="#" onclick="event.preventDefault(); load('CFR');" id="spawnCFR">載入中</a>
+			<a onclick="load('CFR')" id="spawnCFR">載入中</a>
 		</div>
 	
 		<h5>高階-CF SLX</h5>
 		<div class="row" id="cardCFSLX">
-			<a href="#" onclick="event.preventDefault(); load('CF SLX');" id="spawnCFSLX">載入中</a>
+			<a onclick="load('CF SLX')" id="spawnCFSLX">載入中</a>
 		</div>
 
 		<!--臺中自行車地圖-->
@@ -258,7 +253,7 @@
 		<h5>交流地點</h5>
 		<p>在出發之前，不妨找些志同道合的車友交流一番，或許還能相約一起騎車，既不怕迷路，也有互相激勵的效果。</p>
 		<div class="row" id="mapSPOT" style="height: 500px;">
-			<a href="#" onclick="event.preventDefault(); load('MAP SPOT');" id="spawnMAPSPOT">載入中</a>
+			<a onclick="load('MAP SPOT')" id="spawnMAPSPOT">載入中</a>
 		</div>
 		
 		<h5>路線-入門</h5>
