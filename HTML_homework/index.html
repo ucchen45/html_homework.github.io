@@ -62,6 +62,10 @@
 		.input-field i.prefix {
     			color: #000;
 		}
+		.input-field input[type=text]:focus:not(.browser-default),
+		.input-field textarea.materialize-textarea:focus{
+     			color: #2196F3;
+   		}
 		.input-field input[type=text]:focus + label:not(.browser-default),
 		.input-field textarea.materialize-textarea:focus + label {
      			color: #2196F3;
@@ -71,7 +75,8 @@
      			border-bottom: 1px solid #2196F3;
      			box-shadow: 0 1px 0 0 #2196F3;
    		}
-		.input-field input[type=text].valid {
+		.input-field input[type=text].valid,
+		.input-field textarea.materialize-textarea.valid {
      			border-bottom: 1px solid #4caf50;
      			box-shadow: 0 1px 0 0 #4caf50;
    		}
@@ -190,17 +195,15 @@
     		var disclaimerText = `本站資訊僅供參考，購買時請以CANYON官方網站為準。
 如有謬誤，還請不吝指正。`;
     		var disclaimerConfirmed = confirm(disclaimerText);
-    		if (disclaimerConfirmed) {
-			document.getElementById("spawnCFR").click();
-        		document.getElementById("spawnCFSLX").click();
-			document.getElementById("spawnMAPSPOT").click();
-			document.getElementById("spawnMAPNEWBIE").click();
-			document.getElementById("spawnMAPEASY").click();
-			document.getElementById("spawnMAPNORMAL").click();
-			document.getElementById("spawnMAPHARD").click();
-			document.getElementById("spawnMAPEXTREME").click();
-		}
-    		else {
+    		document.getElementById("spawnCFR").click();
+        	document.getElementById("spawnCFSLX").click();
+		document.getElementById("spawnMAPSPOT").click();
+		document.getElementById("spawnMAPNEWBIE").click();
+		document.getElementById("spawnMAPEASY").click();
+		document.getElementById("spawnMAPNORMAL").click();
+		document.getElementById("spawnMAPHARD").click();
+		document.getElementById("spawnMAPEXTREME").click();
+    		if (!disclaimerConfirmed) {
         		window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
 		}
 	};
