@@ -190,7 +190,8 @@
     		var disclaimerText = `本站資訊僅供參考，購買時請以CANYON官方網站為準。
 如有謬誤，還請不吝指正。`;
     		var disclaimerConfirmed = confirm(disclaimerText);
-    		document.getElementById("spawnCFR").click();
+    		if (disclaimerConfirmed) {
+		document.getElementById("spawnCFR").click();
         	document.getElementById("spawnCFSLX").click();
 		document.getElementById("spawnMAPSPOT").click();
 		document.getElementById("spawnMAPNEWBIE").click();
@@ -198,7 +199,8 @@
 		document.getElementById("spawnMAPNORMAL").click();
 		document.getElementById("spawnMAPHARD").click();
 		document.getElementById("spawnMAPEXTREME").click();
-    		if (!disclaimerConfirmed) {
+		}
+    		else {
         		window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
 		}
 	};
