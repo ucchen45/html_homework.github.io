@@ -59,49 +59,12 @@
 		color: black !important;
   		font-weight: bold;
 		}
-		.input-field input[type="text"]:not(.browser-default),
-		.input-field textarea.materialize-textarea {
-    			border-bottom: 1px solid #000;
-    			color: #424242;
-		}
-		.input-field input[type="text"]:not(.browser-default):focus,
-		.input-field textarea.materialize-textarea:focus,
-		.input-field i.prefix:focus {
-    			border-bottom: 1px solid #2196F3;
-    			box-shadow: 0 1px 0 0 #2196F3;
-			color: #2196F3;
-		}
-		.input-field label {
-    			color: #424242;
-		}
-		.input-field i.prefix {
-    			color: #000;
-		}
 		@media screen and (max-width: 650px) {
     			.hide-on-custom {
       			display: none !important;
     			}
   		}
 	</style>
-
-	<script>
-	window.onload = function () {
-    		var disclaimerText = `本站資訊僅供參考，購買時請以CANYON官方網站為準。
-如有謬誤，還請不吝指正。`;
-    		var disclaimerConfirmed = confirm(disclaimerText);
-    		document.getElementById("spawnCFR").click();
-        	document.getElementById("spawnCFSLX").click();
-		document.getElementById("spawnMAPSPOT").click();
-		document.getElementById("spawnMAPNEWBIE").click();
-		document.getElementById("spawnMAPEASY").click();
-		document.getElementById("spawnMAPNORMAL").click();
-		document.getElementById("spawnMAPHARD").click();
-		document.getElementById("spawnMAPEXTREME").click();
-    		if (!disclaimerConfirmed) {
-        		window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
-		}
-	};
-	</script>
 	
 	<script>
     	function scrollToElement(id) {
@@ -111,10 +74,12 @@
 		}
     	}
 	</script>
-	
+
+	<!--讀取自行車資訊試算表-->
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
     	google.charts.load('current', {'packages':['corechart']});
+		
     	function load(tag) {
         	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
@@ -196,6 +161,23 @@
 			document.getElementById("mapEXTREME").innerHTML = card;
 		}
 	}
+	
+	window.onload = function () {
+    		var disclaimerText = `本站資訊僅供參考，購買時請以CANYON官方網站為準。
+如有謬誤，還請不吝指正。`;
+    		var disclaimerConfirmed = confirm(disclaimerText);
+    		document.getElementById("spawnCFR").click();
+        	document.getElementById("spawnCFSLX").click();
+		document.getElementById("spawnMAPSPOT").click();
+		document.getElementById("spawnMAPNEWBIE").click();
+		document.getElementById("spawnMAPEASY").click();
+		document.getElementById("spawnMAPNORMAL").click();
+		document.getElementById("spawnMAPHARD").click();
+		document.getElementById("spawnMAPEXTREME").click();
+    		if (!disclaimerConfirmed) {
+        		window.location.href = "https://ucchen45.github.io/html_homework.github.io/HTML_homework/index.html";
+		}
+	};
 	</script>
 </head>
 <body>
@@ -293,11 +275,9 @@
           			<textarea id="textarea1" class="materialize-textarea"></textarea>
           			<label for="textarea1">留言內容</label>
         		</div>
-			<div class="right-align">
-				<button class="btn waves-effect waves-light blue" type="submit" name="action">送出
+			<button class="btn waves-effect waves-light" type="submit" name="action">送出
     				<i class="material-icons right">send</i>
-  				</button>
-			</div>
+  			</button>
 		</div>
 	</div>
 		
@@ -308,7 +288,7 @@
 	<div class="col l2 m4 s10">
                 <h5 class="white-text">關於作者</h5>
                 <p class="grey-text text-lighten-3">陳又晞，目前就讀中興大學，自由車社成員，自行車愛好者。</p>
-		<p class="grey-text text-lighten-3"><i class="material-icons prefix" style="font-size: 20px">email</i>youxichen55@gmail.com</p>
+		<p class="grey-text text-lighten-3"><i class="material-icons" style="font-size: 15px">email</i>youxichen55@gmail.com</p>
         </div>
 	<div class="col l0 m2 s2"></div>
 	<div class="col l4 m4 s10">
