@@ -98,13 +98,12 @@
     	}
 	</script>
 
-	<!--讀取自行車資訊試算表-->
 	<script src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript">
     	google.charts.load('current', {'packages':['corechart']});
 		
     	function load(tag) {
-        	var url ='https://docs.google.com/spreadsheets/d/1rqzP8llo3rywXwTukFZeP1VFN4eSMCeOZMYA0mLi2fQ/edit?usp=sharing';
+        	var url ='https://docs.google.com/spreadsheets/d/1fHP3xQ2971WtHL_98QLZFi9IGsyM4UdjZ1Aiw8PiozU/edit?usp=sharing';
         	var query = new google.visualization.Query(url);
         	query.setQuery("select * where A='"+tag+"'");
         	query.send(processData);
